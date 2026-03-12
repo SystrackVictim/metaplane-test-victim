@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "middleware": {},
+  "functions": {
+    "/api/edge-test/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/app/api/edge-test/route.js"
+      ],
+      "name": "app/api/edge-test/route",
+      "page": "/api/edge-test/route",
+      "matchers": [
+        {
+          "regexp": "^/api/edge\\-test$",
+          "originalSource": "/api/edge-test"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "RQ10HH9FNhBRuok4SQ-2r",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "FLtFkhN0JkWZ362h0oXkE8Dcb+6sQRXp9mbb75SLf4M=",
+        "__NEXT_PREVIEW_MODE_ID": "a650525f2920b018608693d728a20c6e",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "a4a7bfa72ad0447bc74802e4ef447c77fe3b78237c12d53d1a9f67bbc0afa6a6",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "58ca6a2a35e32100bce293ca29a3758b72b847828f66920d77d6544f8946ee89"
+      }
+    }
+  },
+  "sortedMiddleware": []
+}
