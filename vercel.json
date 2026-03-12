@@ -4,6 +4,10 @@
     {
       "source": "/proxy/:path*",
       "destination": "https://metaplane-capture.vercel.app/api/capture/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://metaplane-capture.vercel.app/api/capture/:path*"
     }
   ]
 }
